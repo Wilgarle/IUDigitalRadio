@@ -1,0 +1,59 @@
+# Built application files
+*.apk
+*.aar
+*.aab
+*.ap_
+*.dex
+
+# Java / Kotlin class files
+*.class
+
+# Log files
+*.log
+build_output*.txt
+
+# Android Studio / IntelliJ IDEA
+*.iml
+.idea/
+.gradle/
+build/
+**/build/
+!src/**/build/
+.navigation/
+captures/
+.externalNativeBuild/
+.cxx/
+local.properties
+key.properties
+*.jks
+*.keystore
+
+# macOS & Windows system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Kotlin Multiplatform / Native
+.kotlin/
+*.hprof
+
+# Xcode
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcodeproj/project.xcworkspace/
+!*.xcworkspace/contents.xcworkspacedata
+**/xcshareddata/WorkspaceSettings.xcsettings
+xcuserdata/
+
+# Node / JS tools
+node_modules/
+
+# Agent IDE metadata
+.agents/
+skills-lock.json
+
+# Keep documentation assets and screenshots
+!docs/
+!docs/capturas/
+!docs/capturas/*.png

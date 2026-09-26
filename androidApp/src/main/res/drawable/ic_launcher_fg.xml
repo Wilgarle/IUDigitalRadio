@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Fondo gradiente circular oscuro -->
+    <path
+        android:fillColor="#0D0D1A"
+        android:pathData="M0,0h108v108h-108z" />
+
+    <!-- Círculo exterior glow cyan -->
+    <path
+        android:fillColor="#1A3A4A"
+        android:pathData="M54,54m-30,0a30,30 0,1 1,60 0a30,30 0,1 1,-60 0" />
+
+    <!-- Círculo interior -->
+    <path
+        android:fillColor="#0D1520"
+        android:pathData="M54,54m-24,0a24,24 0,1 1,48 0a24,24 0,1 1,-48 0" />
+
+    <!-- Ondas de radio - exterior -->
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M72,36 A25,25 0 0,1 72,72"
+        android:strokeWidth="2.5"
+        android:strokeColor="#00E5FF" />
+
+    <!-- Ondas de radio - medio -->
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M66,40 A18,18 0 0,1 66,68"
+        android:strokeWidth="2.5"
+        android:strokeColor="#00B0FF" />
+
+    <!-- Ondas de radio - interior -->
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M60,44 A12,12 0 0,1 60,64"
+        android:strokeWidth="2.5"
+        android:strokeColor="#0097A7" />
+
+    <!-- Barras de audio visualizer (5 barras estilo ecualizador) -->
+    <path
+        android:fillColor="#00E5FF"
+        android:pathData="M34,62 L34,50 Q34,48 36,48 L37,48 Q39,48 39,50 L39,62 Q39,64 37,64 L36,64 Q34,64 34,62z" />
+    <path
+        android:fillColor="#00B0FF"
+        android:pathData="M41,62 L41,44 Q41,42 43,42 L44,42 Q46,42 46,44 L46,62 Q46,64 44,64 L43,64 Q41,64 41,62z" />
+    <path
+        android:fillColor="#00E5FF"
+        android:pathData="M48,62 L48,38 Q48,36 50,36 L51,36 Q53,36 53,38 L53,62 Q53,64 51,64 L50,64 Q48,64 48,62z" />
+    <path
+        android:fillColor="#7C4DFF"
+        android:pathData="M41,62 L41,54 Q41,52 43,52 L44,52 Q46,52 46,54 L46,62 Q46,64 44,64 L43,64 Q41,64 41,62z"
+        android:alpha="0.4" />
+
+</vector>

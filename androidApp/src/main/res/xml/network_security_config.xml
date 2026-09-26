@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Network Security Config — permite tráfico HTTP para streams de radio
+  Los stream URLs de emisoras pueden ser HTTP (no HTTPS).
+  La API de Radio Browser sí usa HTTPS.
+-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>
