@@ -1,35 +1,34 @@
-# IU Digital Radio 📻 — Documento Técnico y Guía del Proyecto
+# IU Digital Radio — Documento Técnico y Guía del Proyecto
 
 > **Institución Universitaria Digital de Antioquia (IU Digital)**  
 > **Asignatura:** Programación de Dispositivos Móviles  
 > **Plataforma:** Android (Kotlin Multiplatform / Jetpack Compose)  
-> **Versión:** 1.0.0
-
+> **Versión:** 1.0.0  
 > **Autor:** William Garcia Leonel
 
 ---
 
-## 📑 Tabla de Contenidos
+## Tabla de Contenidos
 
-1. [Resumen del Proyecto](#-resumen-del-proyecto)
-2. [Definición de Arquitectura](#-definición-de-arquitectura)
+1. [Resumen del Proyecto](#resumen-del-proyecto)
+2. [Definición de Arquitectura](#definición-de-arquitectura)
    - [Estructura de Componentes en Jetpack Compose](#estructura-de-componentes-en-jetpack-compose)
    - [Manejo de Estado (State Management)](#manejo-de-estado-state-management)
    - [Capas de Clean Architecture](#capas-de-clean-architecture)
-3. [Histograma de Funcionalidades](#-histograma-de-funcionalidades)
-4. [Evidencia Visual y Capturas de Pantalla](#-evidencia-visual-y-capturas-de-pantalla)
+3. [Histograma de Funcionalidades](#histograma-de-funcionalidades)
+4. [Evidencia Visual y Capturas de Pantalla](#evidencia-visual-y-capturas-de-pantalla)
    - [1. Interfaz Gráfica de Usuario (UI/UX)](#1-interfaz-gráfica-de-usuario-ui-ux)
    - [2. Cuadro de Permisos y Opciones de Fotografía](#2-cuadro-de-permisos-y-opciones-de-fotografía)
    - [3. Funcionamiento de la Cámara en Tiempo Real](#3-funcionamiento-de-la-cámara-en-tiempo-real)
    - [4. Soporte Dual: Modo Oscuro y Modo Claro](#4-soporte-dual-modo-oscuro-y-modo-claro)
    - [5. Generación del APK en Android Studio](#5-generación-del-apk-en-android-studio)
-5. [Stack Tecnológico y Dependencias](#-stack-tecnológico-y-dependencias)
-6. [Instrucciones de Instalación y Ejecución](#-instrucciones-de-instalación-y-ejecución)
-7. [Estructura Limpia del Repositorio](#-estructura-limpia-del-repositorio)
+5. [Stack Tecnológico y Dependencias](#stack-tecnológico-y-dependencias)
+6. [Instrucciones de Instalación y Ejecución](#instrucciones-de-instalación-y-ejecución)
+7. [Estructura Limpia del Repositorio](#estructura-limpia-del-repositorio)
 
 ---
 
-## 📌 Resumen del Proyecto
+## Resumen del Proyecto
 
 **IU Digital Radio** es una aplicación móvil nativa para Android construida con las tecnologías más modernas del ecosistema: **Jetpack Compose 100% declarativo (0 archivos XML de layout)**, **Kotlin Coroutines / Flow**, **Hilt (Inyección de Dependencias)**, **AndroidX Media3 ExoPlayer**, **Room Database** y **DataStore Preferences**.
 
@@ -37,7 +36,7 @@ La aplicación permite sintonizar miles de emisoras de radio en vivo a nivel mun
 
 ---
 
-## 🏗 Definición de Arquitectura
+## Definición de Arquitectura
 
 El proyecto está diseñado bajo los principios de **Clean Architecture** complementado con el patrón de diseño **MVI (Model-View-Intent) / MVVM (Model-View-ViewModel)** reactivo unidireccional.
 
@@ -167,28 +166,28 @@ El manejo de estado se diseñó siguiendo el principio de **Fuente Única de la 
 
 ---
 
-## 📊 Histograma de Funcionalidades
+## Histograma de Funcionalidades
 
 A continuación se presenta la matriz de cobertura funcional del proyecto, contrastando cada requerimiento con su módulo de implementación y su evidencia visual:
 
-|    ID     | Requerimiento / Funcionalidad                                                                                           | Componente / Archivo                                     | Estado  | Evidencia Visual                                                  |
-| :-------: | :---------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------- | :-----: | :---------------------------------------------------------------- |
-| **RF-01** | **UI 100% en Jetpack Compose**<br>Cero layouts en XML, diseño fluido declarativo.                                       | `MainActivity.kt`<br>`RadioNavHost.kt`                   | ✅ 100% | `Screenshot_1.png`<br>`Screenshot_11.png`                         |
-| **RF-02** | **Perfil y Captura de Foto**<br>Avatar circular con integración a cámara nativa y galería.                              | `UserProfileHeader.kt`<br>`ProfileScreen.kt`             | ✅ 100% | `Screenshot_8.png`<br>`Screenshot_8.4.png`<br>`Screenshot_10.png` |
-| **RF-03** | **Gestión de Permisos en Runtime**<br>Solicitud de permiso `CAMERA` y manejo de denegación vía Snackbar.                | `UserAvatarButton.kt`                                    | ✅ 100% | `Screenshot_8.png`<br>`Screenshot_8.4.png`                        |
-| **RF-04** | **Manejo de Estado y Rotaciones**<br>Arquitectura reactiva con `StateFlow` y persistencia con `rememberSaveable`.       | `PlayerViewModel.kt`<br>`RadioUiState`                   | ✅ 100% | `Screenshot_2.png`<br>`Screenshot_7.png`                          |
-| **RF-05** | **Feedback Háptico Configurable**<br>Vibración háptica al sintonizar o cambiar volumen, configurable en Ajustes.        | `PlayerCard.kt`<br>`PlayerViewModel.kt`                  | ✅ 100% | `Screenshot_7.png`<br>`Screenshot_11.png`                         |
-| **RF-06** | **Catálogo y Scroll Dinámico**<br>LazyColumn optimizada con badges de bitrate, tags y banderas de países.               | `DiscoverScreen.kt`<br>`StationCard.kt`                  | ✅ 100% | `Screenshot_1.png`<br>`Screenshot_4.png`                          |
-| **RF-07** | **Reproducción Media3 ExoPlayer**<br>Streaming de audio en vivo en segundo plano mediante Foreground Service.           | `MediaPlaybackService.kt`<br>`PlayerViewModel.kt`        | ✅ 100% | `Screenshot_2.png`                                                |
-| **RF-08** | **Mapa Geográfico Interactivo**<br>Proyección Mercator en Canvas, Carto basemap y +590 emisoras geolocalizadas.         | `WorldMapScreen.kt`<br>`WorldMapCanvas.kt`               | ✅ 100% | `Screenshot_3.png`                                                |
-| **RF-09** | **Búsqueda y Exploración Continentes**<br>Pestañas de búsqueda libre y filtro jerárquico por países/continentes.        | `SearchScreen.kt`<br>`SearchViewModel.kt`                | ✅ 100% | `Screenshot_5.png`<br>`Screenshot_6.png`                          |
-| **RF-10** | **Base de Datos Local de Favoritas**<br>Almacenamiento SQLite offline de emisoras favoritas con Room.                   | `StationDao.kt`<br>`RadioDatabase.kt`                    | ✅ 100% | `Screenshot_4.png`                                                |
-| **RF-11** | **Estadísticas Dinámicas en Perfil**<br>Conteo real de tiempo escuchado, países reproducidos y favoritas vía DataStore. | `UserPreferencesRepositoryImpl.kt`<br>`ProfileScreen.kt` | ✅ 100% | `Screenshot_7.png`<br>`Screenshot_10.png`                         |
-| **RF-12** | **Soporte Tema Dual (Dark & Light)**<br>Esquemas de color adaptativos de alto contraste (WCAG AA+) con estética Glass.  | `Theme.kt`<br>`Glass.kt`<br>`Color.kt`                   | ✅ 100% | `Screenshot_1.png`<br>`Screenshot_11.png`                         |
+|    ID     | Requerimiento / Funcionalidad                                                                                           | Componente / Archivo                                     | Estado | Evidencia Visual                                                  |
+| :-------: | :---------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------- | :----: | :---------------------------------------------------------------- |
+| **RF-01** | **UI 100% en Jetpack Compose**<br>Cero layouts en XML, diseño fluido declarativo.                                       | `MainActivity.kt`<br>`RadioNavHost.kt`                   |  100%  | `Screenshot_1.png`<br>`Screenshot_11.png`                         |
+| **RF-02** | **Perfil y Captura de Foto**<br>Avatar circular con integración a cámara nativa y galería.                              | `UserProfileHeader.kt`<br>`ProfileScreen.kt`             |  100%  | `Screenshot_8.png`<br>`Screenshot_8.4.png`<br>`Screenshot_10.png` |
+| **RF-03** | **Gestión de Permisos en Runtime**<br>Solicitud de permiso `CAMERA` y manejo de denegación vía Snackbar.                | `UserAvatarButton.kt`                                    |  100%  | `Screenshot_8.png`<br>`Screenshot_8.4.png`                        |
+| **RF-04** | **Manejo de Estado y Rotaciones**<br>Arquitectura reactiva con `StateFlow` y persistencia con `rememberSaveable`.       | `PlayerViewModel.kt`<br>`RadioUiState`                   |  100%  | `Screenshot_2.png`<br>`Screenshot_7.png`                          |
+| **RF-05** | **Feedback Háptico Configurable**<br>Vibración háptica al sintonizar o cambiar volumen, configurable en Ajustes.        | `PlayerCard.kt`<br>`PlayerViewModel.kt`                  |  100%  | `Screenshot_7.png`<br>`Screenshot_11.png`                         |
+| **RF-06** | **Catálogo y Scroll Dinámico**<br>LazyColumn optimizada con badges de bitrate, tags y banderas de países.               | `DiscoverScreen.kt`<br>`StationCard.kt`                  |  100%  | `Screenshot_1.png`<br>`Screenshot_4.png`                          |
+| **RF-07** | **Reproducción Media3 ExoPlayer**<br>Streaming de audio en vivo en segundo plano mediante Foreground Service.           | `MediaPlaybackService.kt`<br>`PlayerViewModel.kt`        |  100%  | `Screenshot_2.png`                                                |
+| **RF-08** | **Mapa Geográfico Interactivo**<br>Proyección Mercator en Canvas, Carto basemap y +590 emisoras geolocalizadas.         | `WorldMapScreen.kt`<br>`WorldMapCanvas.kt`               |  100%  | `Screenshot_3.png`                                                |
+| **RF-09** | **Búsqueda y Exploración Continentes**<br>Pestañas de búsqueda libre y filtro jerárquico por países/continentes.        | `SearchScreen.kt`<br>`SearchViewModel.kt`                |  100%  | `Screenshot_5.png`<br>`Screenshot_6.png`                          |
+| **RF-10** | **Base de Datos Local de Favoritas**<br>Almacenamiento SQLite offline de emisoras favoritas con Room.                   | `StationDao.kt`<br>`RadioDatabase.kt`                    |  100%  | `Screenshot_4.png`                                                |
+| **RF-11** | **Estadísticas Dinámicas en Perfil**<br>Conteo real de tiempo escuchado, países reproducidos y favoritas vía DataStore. | `UserPreferencesRepositoryImpl.kt`<br>`ProfileScreen.kt` |  100%  | `Screenshot_7.png`<br>`Screenshot_10.png`                         |
+| **RF-12** | **Soporte Tema Dual (Dark & Light)**<br>Esquemas de color adaptativos de alto contraste (WCAG AA+) con estética Glass.  | `Theme.kt`<br>`Glass.kt`<br>`Color.kt`                   |  100%  | `Screenshot_1.png`<br>`Screenshot_11.png`                         |
 
 ---
 
-## 📷 Evidencia Visual y Capturas de Pantalla
+## Evidencia Visual y Capturas de Pantalla
 
 Todas las capturas presentadas a continuación son evidencia real del funcionamiento de la aplicación en dispositivo y emulador:
 
@@ -297,7 +296,7 @@ El APK compilado con éxito se ubica en la siguiente ruta estándar de salida:
 
 ---
 
-## 🛠 Stack Tecnológico y Dependencias
+## Stack Tecnológico y Dependencias
 
 - **Lenguaje:** Kotlin 2.1+ (Kotlin Multiplatform KMP)
 - **Framework de UI:** Jetpack Compose (BOM 2024.12.01) + Material3
@@ -313,7 +312,7 @@ El APK compilado con éxito se ubica en la siguiente ruta estándar de salida:
 
 ---
 
-## 🚀 Instrucciones de Instalación y Ejecución
+## Instrucciones de Instalación y Ejecución
 
 ### Prerrequisitos
 
@@ -343,7 +342,7 @@ El APK compilado con éxito se ubica en la siguiente ruta estándar de salida:
 
 ---
 
-## 📁 Estructura Limpia del Repositorio
+## Estructura Limpia del Repositorio
 
 El código fuente ha sido depurado por completo, eliminando archivos residuales, imports obsoletos y artefactos temporales:
 
