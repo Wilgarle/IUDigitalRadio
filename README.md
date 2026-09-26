@@ -354,18 +354,6 @@ IUDigitalRadio/
 ├── gradle/libs.versions.toml       # Catálogo centralizado de versiones y librerías
 ├── docs/
 │   └── capturas/                   # Evidencias fotográficas organizadas del proyecto
-│       ├── Screenshot_1.png        # Pantalla Descubrir en Modo Oscuro
-│       ├── Screenshot_2.png        # Reproductor activo con Visualizador de 20 barras
-│       ├── Screenshot_3.png        # Mapa interactivo con pines de radio
-│       ├── Screenshot_4.png        # Mis Favoritas con persistencia Room
-│       ├── Screenshot_5.png        # Búsqueda en tiempo real por texto
-│       ├── Screenshot_6.png        # Exploración de emisoras por países
-│       ├── Screenshot_7.png        # Perfil con métricas de escucha en Modo Oscuro
-│       ├── Screenshot_8.png        # Modal de selección de foto (Cámara / Galería)
-│       ├── Screenshot_8.4.png      # Ejecución activa de la Cámara de Android
-│       ├── Screenshot_9.png        # Modal de foto con opción Eliminar
-│       ├── Screenshot_10.png       # Perfil con foto tomada y sincronizada
-│       └── Screenshot_11.png       # Perfil y componentes en Modo Claro (WCAG AA+)
 ├── androidApp/
 │   ├── build.gradle.kts            # Configuración de dependencias y plugins de Android
 │   └── src/main/
